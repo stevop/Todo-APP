@@ -31,17 +31,17 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .container {
-  max-width: 375px;
+  width: 375px;
 }
 
 header {
   background-image: url(../images/bg-mobile-light.jpg);
   background-repeat: no-repeat;
+  border-radius: 0.5em 0.5em 0 0;
   padding: 2.5em 1.5em;
   width: 100%;
   display: flex;
@@ -51,6 +51,7 @@ header .todo-heading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2em;
 }
 header .todo-heading h1 {
@@ -60,6 +61,7 @@ header .todo-heading h1 {
 }
 header .todo-heading .dark-mode-toggle {
   cursor: pointer;
+  align-self: center;
 }
 header .new-task-input {
   border: none;
@@ -68,4 +70,78 @@ header .new-task-input {
   outline: none;
   padding: 1em;
   width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-light-grayish-blue);
+  border-radius: 0 0 0.5em 0.5em;
+  height: 100%;
+  position: relative;
+  padding: 2.5em 1.5em;
+  width: 100%;
+}
+main .todo-tasks {
+  background-color: var(--very-light-gray);
+  border-radius: 0.5em;
+  list-style-type: none;
+  position: absolute;
+  top: -22px;
+  width: 85%;
+}
+main .todo-tasks li {
+  color: var(--very-dark-grayish-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-top: 0.5px solid var(--light-grayish-blue);
+  border-bottom: 0.5px solid var(--light-grayish-blue);
+  font-size: 0.8em;
+  padding: 1em;
+}
+main .todo-tasks li:first-of-type {
+  border: none;
+}
+main .todo-tasks li:last-of-type {
+  border: none;
+}
+main .todo-tasks li .check {
+  background: white;
+  border: 1px solid var(--light-grayish-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  height: auto;
+  margin-right: 0.5em;
+  transition: 0.5s linear all;
+  width: 18px;
+}
+main .todo-tasks li .check:hover {
+  background: linear-gradient(to bottom, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+main .todo-tasks li .delete {
+  cursor: pointer;
+}
+main .todo-tasks .last-list {
+  display: flex;
+  justify-content: space-between;
+}
+main .navbar {
+  border: none;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  position: inherit;
+  transition: 0.3s color linear;
+  width: 100%;
+}
+main .navbar li {
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+}
+main .navbar li:hover, main .navbar li:focus, main .navbar li:active {
+  color: var(--right-blue);
 }/*# sourceMappingURL=style.css.map */
