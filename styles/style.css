@@ -66,6 +66,7 @@ header .todo-heading .dark-mode-toggle {
 header .new-task-input {
   border: none;
   border-radius: 0.5em;
+  box-shadow: 0 5px 10px dimgray;
   font-family: inherit;
   outline: none;
   padding: 1em;
@@ -87,21 +88,23 @@ main {
 main .todo-tasks {
   background-color: var(--very-light-gray);
   border-radius: 0.5em;
+  box-shadow: 0 5px 10px dimgray;
   list-style-type: none;
   position: absolute;
   top: -22px;
   width: 85%;
 }
+main .todo-tasks .deleted {
+  display: none;
+}
 main .todo-tasks li {
   color: var(--very-dark-grayish-blue);
   display: flex;
+  font-size: 0.8em;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  border-top: 0.5px solid var(--light-grayish-blue);
-  border-bottom: 0.5px solid var(--light-grayish-blue);
-  font-size: 0.8em;
   padding: 1em;
+  width: 100%;
 }
 main .todo-tasks li:first-of-type {
   border: none;
@@ -118,30 +121,53 @@ main .todo-tasks li .check {
   margin-right: 0.5em;
   transition: 0.5s linear all;
   width: 18px;
+  z-index: 10;
 }
 main .todo-tasks li .check:hover {
   background: linear-gradient(to bottom, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
 }
 main .todo-tasks li .delete {
   cursor: pointer;
+  z-index: 10;
 }
 main .todo-tasks .last-list {
   display: flex;
   justify-content: space-between;
 }
-main .navbar {
-  border: none;
+main section {
+  width: 100%;
+}
+main section .navbar {
   display: flex;
+  justify-content: center;
   align-items: center;
+  background-color: var(--very-light-gray);
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: 0 5px 10px dimgray;
+  font-size: 0.8em;
   font-weight: 700;
+  list-style-type: none;
+  padding: 1.5em 1.5em;
   position: inherit;
   transition: 0.3s color linear;
   width: 100%;
 }
-main .navbar li {
+main section .navbar li {
   color: var(--dark-grayish-blue);
   cursor: pointer;
+  display: inline-block;
+  margin-right: 1rem;
 }
-main .navbar li:hover, main .navbar li:focus, main .navbar li:active {
+main section .navbar li:last-of-type {
+  margin-right: 0;
+}
+main section .navbar li:hover, main section .navbar li:focus, main section .navbar li:active {
   color: var(--right-blue);
+}
+main p {
+  color: var(--dark-grayish-blue);
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-top: 3em;
 }/*# sourceMappingURL=style.css.map */
