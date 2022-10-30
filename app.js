@@ -2,8 +2,8 @@ window.addEventListener("load", (e) => {
     const newTaskInput = document.querySelector(".new-task-input");
     const task = document.querySelector(".task");
     const tasks = document.querySelector(".todo-tasks");
-    const completeIcon = document.querySelector(".check");
-    const deleteIcon = document.querySelector(".delete");
+    const completeIcon = document.querySelector(".icon-check");
+    const deleteIcon = document.querySelector(".icon-delete");
 
      
 
@@ -19,19 +19,24 @@ window.addEventListener("load", (e) => {
         newTask.classList.add("task");
         newTask.innerHTML = `
             <div>
-                <img class="check" src="./images/icon-check.svg" alt="task completed">
+                <img class="icon-check" src="./images/icon-check.svg">
                 ${e.target.value}
             </div>
-            <img class="delete" src="./images/icon-cross.svg" alt="delete task">
+            <img class="icon-delete" src="./images/icon-cross.svg">
         `
         tasks.prepend(newTask);
         e.target.value = "";
 
     });
 
+    // complete a task:
+    completeIcon.addEventListener("click", (e) => {
+        task.classList.toggle("completed");
+    });
+
     // delete a task:
     deleteIcon.addEventListener("click", (e) => {
-        alert("Hello!");
+        task.classList.add("deleted");
     });
 
 });

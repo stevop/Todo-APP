@@ -35,6 +35,7 @@ body {
 }
 
 .container {
+  padding: 0 1em;
   width: 375px;
 }
 
@@ -94,25 +95,29 @@ main .todo-tasks {
   top: -22px;
   width: 85%;
 }
-main .todo-tasks .deleted {
+main .todo-tasks .task.completed {
+  text-decoration: line-through;
+}
+main .todo-tasks .task.deleted {
   display: none;
 }
-main .todo-tasks li {
-  color: var(--very-dark-grayish-blue);
+main .todo-tasks li, main .todo-tasks .task {
   display: flex;
-  font-size: 0.8em;
   justify-content: space-between;
   align-items: center;
+  color: var(--very-dark-grayish-blue);
+  cursor: pointer;
+  font-size: 0.8em;
   padding: 1em;
   width: 100%;
 }
-main .todo-tasks li:first-of-type {
+main .todo-tasks li:first-of-type, main .todo-tasks .task:first-of-type {
   border: none;
 }
-main .todo-tasks li:last-of-type {
+main .todo-tasks li:last-of-type, main .todo-tasks .task:last-of-type {
   border: none;
 }
-main .todo-tasks li .check {
+main .todo-tasks li .icon-check, main .todo-tasks .task .icon-check {
   background: white;
   border: 1px solid var(--light-grayish-blue);
   border-radius: 50%;
@@ -123,21 +128,19 @@ main .todo-tasks li .check {
   width: 18px;
   z-index: 10;
 }
-main .todo-tasks li .check:hover {
+main .todo-tasks li .icon-check:hover, main .todo-tasks .task .icon-check:hover {
   background: linear-gradient(to bottom, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
 }
-main .todo-tasks li .delete {
+main .todo-tasks li .icon-delete, main .todo-tasks .task .icon-delete {
   cursor: pointer;
   z-index: 10;
 }
-main .todo-tasks .last-list {
+main .last-list {
   display: flex;
   justify-content: space-between;
 }
-main section {
-  width: 100%;
-}
-main section .navbar {
+
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,19 +156,20 @@ main section .navbar {
   transition: 0.3s color linear;
   width: 100%;
 }
-main section .navbar li {
+.navbar li {
   color: var(--dark-grayish-blue);
   cursor: pointer;
   display: inline-block;
   margin-right: 1rem;
 }
-main section .navbar li:last-of-type {
+.navbar li:last-of-type {
   margin-right: 0;
 }
-main section .navbar li:hover, main section .navbar li:focus, main section .navbar li:active {
+.navbar li:hover, .navbar li:focus, .navbar li:active {
   color: var(--right-blue);
 }
-main p {
+
+p {
   color: var(--dark-grayish-blue);
   font-size: 0.8em;
   font-weight: 400;
